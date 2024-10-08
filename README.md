@@ -1,6 +1,22 @@
 # InvoiceGenerator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+
+## Steps to run the application using SSR
+
+1. Clone the repository:
+
+git clone https://github.com/KasiaKasia/Angular-v18-SSR.git
+
+2. In the project directory, run the following commands:
+
+npm i
+npm run watch
+npm run serve:ssr:invoice-generator
+
+3. Next, open a web browser and navigate to the following address: http://localhost:4000/
+
+
 
 ## Development server
 
