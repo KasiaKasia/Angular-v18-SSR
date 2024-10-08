@@ -1,0 +1,25 @@
+.form__title {
+    text-align: center;
+}
+
+.form__body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form__field {
+    margin: 10px;
+}
+
+.form__actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}
+.form__actions-button{
+    margin: 0px 10px;
+}

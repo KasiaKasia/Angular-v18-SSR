@@ -1,0 +1,11 @@
+<div class="app">
+  <app-navbar (toggleMenu)="toggleMenu()" />
+  <div class="app__page">
+    <div class="sidebar" [ngClass]="{ 'sidebar--hidden': isMenuHidden }">
+      <app-menu />
+    </div>
+    <div class="dashboard">
+      <router-outlet />
+    </div>
+  </div>
+</div>

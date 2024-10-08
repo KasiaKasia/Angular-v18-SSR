@@ -1,0 +1,22 @@
+@if(contact$ | async; as contact) {
+<div>
+    <span><strong>Name</strong></span>
+    <span> {{ contact.name }}</span>
+</div>
+<div>
+    <div>Address</div>
+    <span> {{ contact.address }}</span>
+</div>
+
+<div>
+    <div>Phone</div>
+    @for (phone of contact.phones; track $index;) {
+    <span>{{ phone }} {{ $index < contact.phones.length - 1 ? ', ' : '' }}</span>
+            }
+</div>
+}
+@if(!(contact$ | async)) {
+<div>
+    <span matListItemLine>Loading...</span>
+</div>
+}

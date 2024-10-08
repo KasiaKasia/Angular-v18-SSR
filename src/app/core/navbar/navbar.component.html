@@ -1,0 +1,37 @@
+<div class="navbar">
+    <div class="navbar__wrapper">
+
+        <div class="navbar__wrapper-left">
+            
+           <div class="navbar__section">
+           <mat-icon aria-hidden="true" (click)="toggleMenu.emit(); icon_left=!icon_left"  fontIcon="{{ icon_left ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left' }}"    />
+           </div>
+           @if(icon_left){
+            <div class="navbar__section">
+                <a class="navbar__routerLink" [routerLink]="['/invoice/add-invoice/' ]" name='addInvoice'>
+                    New invoice
+                </a>
+            </div>
+            <div class="navbar__section">
+                <a class="navbar__routerLink" [routerLink]="['/invoice/preview-invoice/' ]" name='previewInvoice'>
+                    Preview invoice
+                </a>
+            </div>
+           }
+         
+        </div>
+
+        <div class="navbar__wrapper-right">
+            <div class="navbar__section">
+                <mat-icon aria-hidden="true"  color="accent" title="Number of products added" aria-label="Number of products added"
+                    fontIcon="shopping_cart" />
+
+            </div>
+            <div class="navbar__section">
+                <mat-icon aria-hidden="true"  color="accent" title="Total price of products" aria-label="Total price of products"
+                    fontIcon="add_shopping_cart" />
+                <span> {{invoiceSignalService.totalSignal()}}</span>
+            </div>
+        </div>
+    </div>
+</div>

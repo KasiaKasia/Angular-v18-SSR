@@ -1,0 +1,60 @@
+<div class="form__title">
+    <h5>Add invoice</h5>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form__body">
+
+    @for (item of items.controls; track item; let index=$index) {
+    <div formArrayName="items">
+
+
+        <ng-container [formGroupName]="$index">
+
+            <mat-form-field class="form__field" appearance="outline" hintLabel="Min 3 and max 30 characters">
+                <mat-label>Name </mat-label>
+
+                <input formControlName="name" matInput maxlength="30" minlength="3" placeholder="Name" />
+                @if(item.get('name')?.hasError('required')){
+                <mat-error> Name is required. </mat-error>
+                }
+
+                @if(item.get('name')?.hasError('minlength') || item.get('name')?.hasError('maxLength')){
+                <mat-error>The name should be at least 3 and max 30 characters long.</mat-error>
+                }
+
+            </mat-form-field>
+
+            <mat-form-field class="form__field" appearance="outline">
+                <mat-label>Count</mat-label>
+                <input formControlName="count" matInput placeholder="Count" maxlength="3" type="number" />
+                @if(item.get('count')?.hasError('required') ){
+                <mat-error> Count is required. </mat-error>
+                }
+
+                @if(item.get('count')?.hasError('min') || item.get('count')?.hasError('max')){
+                <mat-error> Count can be between 1 and 100</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="form__field" appearance="outline">
+                <mat-label>Price</mat-label>
+                <input formControlName="price" matInput maxlength="7" placeholder="Price" type="number" />
+
+                @if(item.get('price')?.hasError('required')){
+                <mat-error> Price is required. </mat-error>
+                }
+                @if(item.get('price')?.hasError('min') || item.get('price')?.hasError('max')){
+                <mat-error> Price can be between 1 and 1000000</mat-error>
+                }
+            </mat-form-field>
+
+            <button mat-raised-button color="warn" type="button" (click)="removeItem($index)">
+                Remove product
+            </button>
+
+        </ng-container>
+    </div>
+    }
+    <div class="form__actions">
+        <button mat-raised-button color="accent" class="form__actions-button" type="button" (click)="addItem()">Add an item to the Invoice</button>
+        <button mat-raised-button color="primary" type="submit">Save Invoice</button>
+    </div>
+</form>
