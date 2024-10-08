@@ -10,9 +10,9 @@ git clone https://github.com/KasiaKasia/Angular-v18-SSR.git
 
 2. In the project directory, run the following commands:
 
-npm i
-npm run watch
-npm run serve:ssr:invoice-generator
+`npm i`
+`npm run watch`
+`npm run serve:ssr:invoice-generator`
 
 3. Next, open a web browser and navigate to the following address: http://localhost:4000/
 
