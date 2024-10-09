@@ -23,12 +23,14 @@
 
         <div class="navbar__wrapper-right">
             <div class="navbar__section">
-                <mat-icon aria-hidden="true"  color="accent" title="Number of products added" aria-label="Number of products added"
-                    fontIcon="shopping_cart" />
+                <mat-icon aria-hidden="true" color="accent" title="Number of products added" aria-label="Number of products added"
+                    fontIcon="shopping_cart" /> 
+                    <span> Number of rows: {{storeInvoices.numberOfInvoices()}};</span>
+                    <span> Sum of quantities: {{storeInvoices.totalProducts()}}</span>
 
             </div>
             <div class="navbar__section">
-                <mat-icon aria-hidden="true"  color="accent" title="Total price of products" aria-label="Total price of products"
+                <mat-icon aria-hidden="true" color="accent" title="Total price of products" aria-label="Total price of products"
                     fontIcon="add_shopping_cart" />
                 <span> {{invoiceSignalService.totalSignal()}}</span>
             </div>

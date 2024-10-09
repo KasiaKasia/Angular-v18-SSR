@@ -10,6 +10,4 @@ import { InvoiceHeaderComponent } from '../components/invoice-header/invoice-hea
   templateUrl: './preview-invoice.component.html',
   styleUrl: './preview-invoice.component.scss'
 })
-export class PreviewInvoiceComponent {
-
-}
+export class PreviewInvoiceComponent {}

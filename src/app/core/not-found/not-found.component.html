@@ -1,1 +1,6 @@
-<p>not-found works!</p>
+<div class='dashboard--error'> Oops!</div>
+<h6 class='dashboard--error'> {{status + ' ' + message}}</h6>
+<div>Żądana strona nie została znaleziona!</div>
+<div class='dashboard--error'>
+    <a [routerLink]="'/home'">Wróć do strony głównej</a>
+</div>

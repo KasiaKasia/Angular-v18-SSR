@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { InvoiceSignalService } from '../../invoice/signals/invoice-signal.service';
+import { InvoicesStore } from '../../invoice/signal-store/invoice-signal-store.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,5 +15,7 @@ import { InvoiceSignalService } from '../../invoice/signals/invoice-signal.servi
 export class NavbarComponent {
   icon_left=false;
   @Output() toggleMenu = new EventEmitter<void>();
+  readonly storeInvoices = inject(InvoicesStore);
+
   constructor(public invoiceSignalService: InvoiceSignalService) { }
 }

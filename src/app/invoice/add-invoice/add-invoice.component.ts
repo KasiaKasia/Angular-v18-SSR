@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BasicFormService } from '../services/basic-form.service';
 import { FormArray, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { InvoiceSignalService } from '../signals/invoice-signal.service';
 import { MatCardModule } from '@angular/material/card';
+import { InvoicesStore } from '../signal-store/invoice-signal-store.service';
 
 @Component({
   selector: 'app-add-invoice',
@@ -18,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class AddInvoiceComponent {
   protected addForm: FormGroup = this.basicFormService.createForm();
+  readonly storeInvoices = inject(InvoicesStore);
+
   constructor(private basicFormService: BasicFormService,
     public invoiceSignalService: InvoiceSignalService,
     private router: Router) { }
@@ -37,6 +40,7 @@ export class AddInvoiceComponent {
   onSubmit(): void {
     if (this.addForm.invalid) { return; }
     this.invoiceSignalService.setRowValue(this.items.value)
+    this.storeInvoices.addInvoice(this.items.value)
     this.router.navigate([`/invoice/preview-invoice`]);
   }
 }
