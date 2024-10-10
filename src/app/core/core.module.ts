@@ -11,14 +11,14 @@ import { ContactComponent } from './contact/contact.component';
     CoreRoutingModule,
     NotFoundComponent,
     MenuComponent,
-    NavbarComponent, 
+    NavbarComponent,
     ContactComponent
   ],
   exports: [
     NotFoundComponent,
-    MenuComponent, 
-     NavbarComponent,
-     ContactComponent]
-    
+    MenuComponent,
+    NavbarComponent,
+    ContactComponent
+  ]
 })
-export class CoreModule { }
+export class CoreModule {}

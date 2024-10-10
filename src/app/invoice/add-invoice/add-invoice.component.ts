@@ -23,7 +23,7 @@ export class AddInvoiceComponent {
 
   constructor(private basicFormService: BasicFormService,
     public invoiceSignalService: InvoiceSignalService,
-    private router: Router) { }
+    private router: Router) {}
 
   get items() {
     return this.addForm.controls["items"] as FormArray;

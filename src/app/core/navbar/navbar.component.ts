@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { InvoiceSignalService } from '../../invoice/signals/invoice-signal.service';
@@ -9,12 +9,11 @@ import { InvoicesStore } from '../../invoice/signal-store/invoice-signal-store.s
   standalone: true,
   imports: [RouterModule, MatIconModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
-
+  styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  icon_left=false;
-  @Output() toggleMenu = new EventEmitter<void>();
+  protected icon_left = false;
+  protected toggleMenu = output(); 
   readonly storeInvoices = inject(InvoicesStore);
 
   constructor(public invoiceSignalService: InvoiceSignalService) { }

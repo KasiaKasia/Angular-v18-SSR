@@ -12,7 +12,7 @@
     <div>Phone</div>
     @for (phone of contact.phones; track $index;) {
     <span>{{ phone }} {{ $index < contact.phones.length - 1 ? ', ' : '' }}</span>
-            }
+    }
 </div>
 }
 @if(!(contact$ | async)) {

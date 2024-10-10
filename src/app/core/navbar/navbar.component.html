@@ -1,12 +1,10 @@
 <div class="navbar">
     <div class="navbar__wrapper">
-
-        <div class="navbar__wrapper-left">
-            
-           <div class="navbar__section">
-           <mat-icon aria-hidden="true" (click)="toggleMenu.emit(); icon_left=!icon_left"  fontIcon="{{ icon_left ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left' }}"    />
-           </div>
-           @if(icon_left){
+        <div class="navbar__wrapper-left">            
+            <div class="navbar__section">
+                <mat-icon aria-hidden="true" (click)="toggleMenu.emit(); icon_left=!icon_left"  fontIcon="{{ icon_left ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left' }}"    />
+            </div>
+            @if(icon_left){
             <div class="navbar__section">
                 <a class="navbar__routerLink" [routerLink]="['/invoice/add-invoice/' ]" name='addInvoice'>
                     New invoice
