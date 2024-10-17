@@ -10,16 +10,35 @@
     justify-content: space-evenly;
 }
 
+.form__row {
+    display: flex;
+}
+
 .form__field {
     margin: 10px;
 }
 
-.form__actions {
+.form__actions-container {
     display: flex;
+    align-items: center;
+    margin-bottom: 20px;
     justify-content: center;
-    width: 100%;   
 }
 
-.form__actions-button{
-    margin: 0px 10px;
+.form__actions-button {
+    margin: 10px 10px;
+}
+
+@media (max-width: 768px) {
+    .form__row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form__actions-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
