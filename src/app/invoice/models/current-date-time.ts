@@ -1,7 +1,7 @@
 export class CurrentDateTime {
 
     getCurrentDateTime(): string {
-        const today = new Date();
+        const today: Date = new Date();
 
         const day = this.padZero(today.getDate());
         const month = this.padZero(today.getMonth() + 1);

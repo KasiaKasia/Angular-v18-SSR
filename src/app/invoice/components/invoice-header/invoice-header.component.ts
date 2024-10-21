@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CurrentDateTime } from '../../models/current-date-time';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-invoice-header',
   standalone: true,
-  imports: [DatePipe],
+  imports: [],
   templateUrl: './invoice-header.component.html',
   styleUrl: './invoice-header.component.scss'
 })
